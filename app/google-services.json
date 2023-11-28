@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "2835010277",
+    "project_id": "drushim-alpha",
+    "storage_bucket": "drushim-alpha.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:2835010277:android:fdff16491a3d05bd76fa0c",
+        "android_client_info": {
+          "package_name": "com.example.drushim_alpha"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNo84CyJ78ElFzncZ-rN_lC55TgjlSKSk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
