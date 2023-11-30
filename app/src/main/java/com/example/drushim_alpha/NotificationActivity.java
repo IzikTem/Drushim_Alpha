@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -73,7 +74,8 @@ public class NotificationActivity extends AppCompatActivity {
     private void setAlarm() {
         Intent intent = new Intent(this, AlarmReciver.class);
         intent.putExtra("notification" , etNotificationWrite.getText().toString());
-        pendingIntent = PendingIntent.getBroadcast(this,0,intent, PendingIntent.FLAG_IMMUTABLE);
+        //SystemClock.sleep(500);
+        pendingIntent = PendingIntent.getBroadcast(this,0,intent, PendingIntent.FLAG_UPDATE_CURRENT);
         alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         alarmManager.setExact(AlarmManager.RTC,calendar.getTimeInMillis(),pendingIntent);
         Toast.makeText(this,"Notification set successfully",Toast.LENGTH_SHORT).show();
