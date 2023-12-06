@@ -74,7 +74,6 @@ public class NotificationActivity extends AppCompatActivity {
     private void setAlarm() {
         Intent intent = new Intent(this, AlarmReciver.class);
         intent.putExtra("notification" , etNotificationWrite.getText().toString());
-        //SystemClock.sleep(500);
         pendingIntent = PendingIntent.getBroadcast(this,0,intent, PendingIntent.FLAG_UPDATE_CURRENT);
         alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         alarmManager.setExact(AlarmManager.RTC,calendar.getTimeInMillis(),pendingIntent);

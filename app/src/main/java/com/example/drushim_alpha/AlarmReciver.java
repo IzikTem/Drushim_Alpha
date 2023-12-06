@@ -13,7 +13,6 @@ public class AlarmReciver extends BroadcastReceiver  {
     @Override
     public void onReceive(Context context, Intent intent) {
         String etNotiWrite = intent.getStringExtra("notification");
-        Log.d("checkself", etNotiWrite);
         NotificationHelper.showNotificationBtn(context,etNotiWrite);
         Toast.makeText(context,"Notification pushed successfully",Toast.LENGTH_SHORT).show();
 
