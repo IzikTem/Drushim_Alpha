@@ -1,5 +1,6 @@
 package com.example.drushim_alpha;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlarmManager;
@@ -12,6 +13,7 @@ import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -80,6 +82,26 @@ public class NotificationActivity extends AppCompatActivity {
         Toast.makeText(this,"Notification set successfully",Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        String itemName = item.getTitle().toString();
+        if (itemName == "primary")
+        {
+            startActivity(new Intent(this,PrimaryActivity.class));
+        }
+        if (itemName == "user")
+        {
+            Toast.makeText(NotificationActivity.this, "Not Available", Toast.LENGTH_LONG).show();
+        }
+        if (itemName == "notification")
+        {
+            startActivity(new Intent(this,NotificationActivity.class));
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
     private void showTimePicker() {
         picker = new MaterialTimePicker.Builder()
                 .setTimeFormat(TimeFormat.CLOCK_24H)
@@ -106,5 +128,7 @@ public class NotificationActivity extends AppCompatActivity {
 
             }
         });
+
+
     }
 }
