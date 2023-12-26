@@ -20,6 +20,7 @@ import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.timepicker.MaterialTimePicker;
 import com.google.android.material.timepicker.TimeFormat;
 import com.google.firebase.auth.FirebaseAuth;
@@ -35,7 +36,9 @@ public class NotificationActivity extends AppCompatActivity {
     private AlarmManager alarmManager;
     private PendingIntent pendingIntent;
     private EditText etNotificationWrite;
+    private BottomNavigationView BNV;
     public static NotificationActivity instance = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +85,7 @@ public class NotificationActivity extends AppCompatActivity {
         Toast.makeText(this,"Notification set successfully",Toast.LENGTH_SHORT).show();
     }
 
-    @Override
+  /*  @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         String itemName = item.getTitle().toString();
@@ -100,7 +103,7 @@ public class NotificationActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     private void showTimePicker() {
         picker = new MaterialTimePicker.Builder()
