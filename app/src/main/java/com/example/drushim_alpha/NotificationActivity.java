@@ -46,8 +46,10 @@ public class NotificationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_notification);
         broadcastReceiver = new InternetReciver();
         etNotificationWrite = findViewById(R.id.etNotificationWrite);
+        BNV = findViewById(R.id.BottomNavigationNotification);
         internetStatus();
         instance = this;
+        buildMenu();
     }
 
 
@@ -85,25 +87,6 @@ public class NotificationActivity extends AppCompatActivity {
         Toast.makeText(this,"Notification set successfully",Toast.LENGTH_SHORT).show();
     }
 
-  /*  @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        String itemName = item.getTitle().toString();
-        if (itemName == "primary")
-        {
-            startActivity(new Intent(this,PrimaryActivity.class));
-        }
-        if (itemName == "user")
-        {
-            Toast.makeText(NotificationActivity.this, "Not Available", Toast.LENGTH_LONG).show();
-        }
-        if (itemName == "notification")
-        {
-            startActivity(new Intent(this,NotificationActivity.class));
-        }
-
-        return super.onOptionsItemSelected(item);
-    }*/
 
     private void showTimePicker() {
         picker = new MaterialTimePicker.Builder()
@@ -132,6 +115,28 @@ public class NotificationActivity extends AppCompatActivity {
             }
         });
 
+
+    }
+
+    public void buildMenu()
+    {
+        BNV.setOnNavigationItemSelectedListener(item -> {
+            int itemName = item.getItemId();
+            if (itemName == R.id.primary)
+            {
+                startActivity(new Intent(this,PrimaryActivity.class));
+            }
+            if (itemName == R.id.user)
+            {
+                Toast.makeText(this, "Not Available", Toast.LENGTH_LONG).show();
+            }
+            if (itemName == R.id.notification)
+            {
+                startActivity(new Intent(this,NotificationActivity.class));
+            }
+
+            return super.onOptionsItemSelected(item);
+        });
 
     }
 }

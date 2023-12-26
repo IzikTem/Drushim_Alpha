@@ -36,7 +36,8 @@ public class PrimaryActivity extends AppCompatActivity {
         broadcastReceiver = new InternetReciver();
 
         internetStatus();
-        BNV.setOnNavigationItemSelectedListener(item -> {
+        buildMenu();
+       /* BNV.setOnNavigationItemSelectedListener(item -> {
             int itemName = item.getItemId();
             if (itemName == R.id.primary)
             {
@@ -53,7 +54,7 @@ public class PrimaryActivity extends AppCompatActivity {
 
             return super.onOptionsItemSelected(item);
         });
-
+*/
     }
 
     @Override
@@ -86,5 +87,27 @@ public class PrimaryActivity extends AppCompatActivity {
 
     public void goToNotification(View view) {
         startActivity(new Intent(this,NotificationActivity.class));
+    }
+
+    public void buildMenu()
+    {
+        BNV.setOnNavigationItemSelectedListener(item -> {
+            int itemName = item.getItemId();
+            if (itemName == R.id.primary)
+            {
+                startActivity(new Intent(this,PrimaryActivity.class));
+            }
+            if (itemName == R.id.user)
+            {
+                Toast.makeText(this, "Not Available", Toast.LENGTH_LONG).show();
+            }
+            if (itemName == R.id.notification)
+            {
+                startActivity(new Intent(this,NotificationActivity.class));
+            }
+
+            return super.onOptionsItemSelected(item);
+        });
+
     }
 }
