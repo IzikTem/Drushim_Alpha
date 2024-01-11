@@ -128,7 +128,8 @@ public class NotificationActivity extends AppCompatActivity {
             }
             if (itemName == R.id.user)
             {
-                Toast.makeText(this, "Not Available", Toast.LENGTH_LONG).show();
+//                Toast.makeText(this, "Not Available", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(this,UserActivity.class));
             }
             if (itemName == R.id.notification)
             {
