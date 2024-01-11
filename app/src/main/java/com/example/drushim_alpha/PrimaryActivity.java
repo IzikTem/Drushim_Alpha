@@ -31,30 +31,30 @@ public class PrimaryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_primary);
 
-        etPrimaryRTDB = findViewById(R.id.etPrimaryRTDB);
+//        etPrimaryRTDB = findViewById(R.id.etPrimaryRTDB);
         BNV = findViewById(R.id.BottomNavigationPrimary);
         broadcastReceiver = new InternetReciver();
 
         internetStatus();
         buildMenu();
-       /* BNV.setOnNavigationItemSelectedListener(item -> {
-            int itemName = item.getItemId();
-            if (itemName == R.id.primary)
-            {
-                startActivity(new Intent(this,PrimaryActivity.class));
-            }
-            if (itemName == R.id.user)
-            {
-                Toast.makeText(this, "Not Available", Toast.LENGTH_LONG).show();
-            }
-            if (itemName == R.id.notification)
-            {
-                startActivity(new Intent(this,NotificationActivity.class));
-            }
+//        BNV.setOnNavigationItemSelectedListener(item -> {
+//            int itemName = item.getItemId();
+//            if (itemName == R.id.primary)
+//            {
+//                startActivity(new Intent(this,PrimaryActivity.class));
+//            }
+//            if (itemName == R.id.user)
+//            {
+//                Toast.makeText(this, "Not Available", Toast.LENGTH_LONG).show();
+//            }
+//            if (itemName == R.id.notification)
+//            {
+//                startActivity(new Intent(this,NotificationActivity.class));
+//            }
+//
+//            return super.onOptionsItemSelected(item);
+//        });
 
-            return super.onOptionsItemSelected(item);
-        });
-*/
     }
 
     @Override
@@ -71,23 +71,23 @@ public class PrimaryActivity extends AppCompatActivity {
         registerReceiver(broadcastReceiver , new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
     }
 
-    public void logout(View view) {
-        FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(this,LoginActivity.class));
-        finish();
-    }
+//    public void logout(View view) {
+//        FirebaseAuth.getInstance().signOut();
+//        startActivity(new Intent(this,LoginActivity.class));
+//        finish();
+//    }
 
 
-    public void saveRTDB(View view) {
-        FirebaseDatabase database = FirebaseDatabase.getInstance("https://drushim-alpha-default-rtdb.europe-west1.firebasedatabase.app/");
-        DatabaseReference myRef = database.getReference("text");
-
-        myRef.setValue(etPrimaryRTDB.getText().toString());
-    }
-
-    public void goToNotification(View view) {
-        startActivity(new Intent(this,NotificationActivity.class));
-    }
+//    public void saveRTDB(View view) {
+//        FirebaseDatabase database = FirebaseDatabase.getInstance("https://drushim-alpha-default-rtdb.europe-west1.firebasedatabase.app/");
+//        DatabaseReference myRef = database.getReference("text");
+//
+//        myRef.setValue(etPrimaryRTDB.getText().toString());
+//    }
+//
+//    public void goToNotification(View view) {
+//        startActivity(new Intent(this,NotificationActivity.class));
+//    }
 
     public void buildMenu()
     {

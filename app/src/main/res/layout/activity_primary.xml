@@ -6,77 +6,78 @@
     android:layout_height="match_parent"
     tools:context=".PrimaryActivity">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="In Construction :)"
-        android:textSize="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <TextView-->
+<!--        android:id="@+id/textView2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="100dp"-->
+<!--        android:text="In Construction :)"-->
+<!--        android:textSize="30dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <Button
-        android:id="@+id/btnPrimaryLogout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="87dp"
-        android:layout_marginBottom="100dp"
-        android:onClick="logout"
-        android:text="Logout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnPrimaryToNotification" />
+<!--    <Button-->
+<!--        android:id="@+id/btnPrimaryLogout"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="87dp"-->
+<!--        android:layout_marginBottom="100dp"-->
+<!--        android:onClick="logout"-->
+<!--        android:text="Logout"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/btnPrimaryToNotification" />-->
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="Testing RTDB"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+<!--    <TextView-->
+<!--        android:id="@+id/textView3"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="64dp"-->
+<!--        android:text="Testing RTDB"-->
+<!--        android:textSize="24sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView2" />-->
 
-    <EditText
-        android:id="@+id/etPrimaryRTDB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        android:hint="Enter your text for RTDB"
-        />
+<!--    <EditText-->
+<!--        android:id="@+id/etPrimaryRTDB"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="32dp"-->
+<!--        android:ems="10"-->
+<!--        android:gravity="start|top"-->
+<!--        android:inputType="textMultiLine"-->
+<!--        android:minHeight="48dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView3"-->
+<!--        android:hint="Enter your text for RTDB"-->
+<!--        />-->
 
-    <Button
-        android:id="@+id/btnPrimaryRTDB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:onClick="saveRTDB"
-        android:text="Save to data base"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPrimaryRTDB" />
+<!--    <Button-->
+<!--        android:id="@+id/btnPrimaryRTDB"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="32dp"-->
+<!--        android:onClick="saveRTDB"-->
+<!--        android:text="Save to data base"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/etPrimaryRTDB" />-->
 
-    <Button
-        android:id="@+id/btnPrimaryToNotification"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="goToNotification"
-        android:text="To Notification"
-        app:layout_constraintBottom_toTopOf="@+id/btnPrimaryLogout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnPrimaryRTDB" />
+<!--    <Button-->
+<!--        android:id="@+id/btnPrimaryToNotification"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:onClick="goToNotification"-->
+<!--        android:text="To Notification"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/btnPrimaryLogout"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/btnPrimaryRTDB" />-->
+
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -87,4 +88,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,6 +18,9 @@
         android:theme="@style/Theme.Drushim_Alpha"
         tools:targetApi="31">
         <activity
+            android:name=".UserActivity"
+            android:exported="false" />
+        <activity
             android:name=".NotificationActivity"
             android:exported="false" />
         <activity
@@ -32,16 +35,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <receiver android:name=".AlarmReciver"
+
+        <receiver
+            android:name=".AlarmReciver"
             android:enabled="true"
-            android:exported="true">
-
-        </receiver>
-
-
-
-
-
+            android:exported="true"></receiver>
     </application>
 
 </manifest>
