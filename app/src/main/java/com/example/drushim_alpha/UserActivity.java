@@ -7,9 +7,11 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class UserActivity extends AppCompatActivity {
 
@@ -31,6 +33,15 @@ public class UserActivity extends AppCompatActivity {
     {
         registerReceiver(broadcastReceiver , new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
     }
+
+
+    public void logout(View view) {
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(this,LoginActivity.class));
+        finish();
+    }
+
+
 
 
     public void buildMenu()
