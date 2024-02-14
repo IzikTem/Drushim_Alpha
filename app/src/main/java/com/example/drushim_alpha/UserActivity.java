@@ -37,7 +37,7 @@ public class UserActivity extends AppCompatActivity {
 
     public void logout(View view) {
         FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(this,LoginActivity.class));
+        startActivity(new Intent(this,BootActivity.class));
         finish();
     }
 
