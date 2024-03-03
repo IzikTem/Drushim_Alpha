@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -20,10 +21,10 @@ public class UserDataActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
 
-    private EditText etUserDataActivityDate;
-    private EditText etUserDataActivityName;
-    private EditText etUserDataActivityPhone;
-    private EditText etUserDataActivityExperience;
+    private EditText etUserDataActivityDate = findViewById(R.id.etUserDataDate);
+    private EditText etUserDataActivityName = findViewById(R.id.etUserDataName);
+    private EditText etUserDataActivityPhone = findViewById(R.id.etUserDataPhone);
+    private EditText etUserDataActivityExperience = findViewById(R.id.etUserDataExp);
 
 
     private DatePickerDialog picker;
@@ -56,13 +57,24 @@ public class UserDataActivity extends AppCompatActivity {
 
     public void register(View view)
     {
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        String date = etUserDataActivityDate.toString();
-        String name = etUserDataActivityName.toString();
-        String experience = etUserDataActivityExperience.toString();
-        String phone = etUserDataActivityPhone.toString();
+        try {
 
-        User user = new User(currentUser.getUid().toString() ,name , currentUser.getEmail().toString() , phone , experience , date );
-        refUsers.child(currentUser.getUid().toString()).setValue(user);
+
+            FirebaseUser currentUser = mAuth.getCurrentUser();
+            String date = etUserDataActivityDate.toString();
+            String name = etUserDataActivityName.toString();
+            String experience = etUserDataActivityExperience.toString();
+            String phone = etUserDataActivityPhone.toString();
+
+            User user = new User(currentUser.getUid().toString(), name, currentUser.getEmail().toString(), phone, experience, date);
+            refUsers.child(currentUser.getUid().toString()).setValue(user);
+
+        }
+
+        catch (Exception e)
+        {
+            Toast.makeText(UserDataActivity.this, "login failed", Toast.LENGTH_LONG).show();
+
+        }
     }
 }
