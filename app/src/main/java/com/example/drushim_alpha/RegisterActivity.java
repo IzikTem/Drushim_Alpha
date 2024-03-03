@@ -61,7 +61,7 @@ public class RegisterActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()){
-                                    startActivity(new Intent(RegisterActivity.this , PrimaryActivity.class));
+                                    startActivity(new Intent(RegisterActivity.this , UserDataActivity.class));
                                 }
                                 else {
                                     Toast.makeText(RegisterActivity.this, "register failed", Toast.LENGTH_LONG).show();
