@@ -47,31 +47,31 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    public void register(View view) {
-        EditText editTextEmail = findViewById(R.id.etLoginEmail);
-        EditText editTextPassword = findViewById(R.id.etLoginPassword);
-        try {
-            mAuth.createUserWithEmailAndPassword(
-                            editTextEmail.getText().toString(), editTextPassword.getText().toString())
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()){
-                                startActivity(new Intent(LoginActivity.this , PrimaryActivity.class));
-                            }
-                            else {
-                                Toast.makeText(LoginActivity.this, "register failed", Toast.LENGTH_LONG).show();
-                            }
-                        }
-                    });
-            }
-        catch (Exception e){
-            Toast.makeText(LoginActivity.this, "register failed", Toast.LENGTH_LONG).show();
-
-        }
-
-
-    }
+//    public void register(View view) {
+//        EditText editTextEmail = findViewById(R.id.etLoginEmail);
+//        EditText editTextPassword = findViewById(R.id.etLoginPassword);
+//        try {
+//            mAuth.createUserWithEmailAndPassword(
+//                            editTextEmail.getText().toString(), editTextPassword.getText().toString())
+//                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+//                        @Override
+//                        public void onComplete(@NonNull Task<AuthResult> task) {
+//                            if (task.isSuccessful()){
+//                                startActivity(new Intent(LoginActivity.this , PrimaryActivity.class));
+//                            }
+//                            else {
+//                                Toast.makeText(LoginActivity.this, "register failed", Toast.LENGTH_LONG).show();
+//                            }
+//                        }
+//                    });
+//            }
+//        catch (Exception e){
+//            Toast.makeText(LoginActivity.this, "register failed", Toast.LENGTH_LONG).show();
+//
+//        }
+//
+//
+//    }
 
     public void login(View view) {
         EditText editTextEmail = findViewById(R.id.etLoginEmail);
