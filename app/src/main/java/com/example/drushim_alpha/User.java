@@ -20,6 +20,9 @@ public class User
         this.dateOfBirth = dateOfBirth;
     }
 
+    public User() {
+    }
+
     public String getDateOfBirth() {
         return dateOfBirth;
     }

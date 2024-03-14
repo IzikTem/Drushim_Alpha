@@ -1,4 +1,4 @@
-package com.example.drushim_alpha;
+package com.example.drushim_alpha.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.drushim_alpha.InternetReciver;
+import com.example.drushim_alpha.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -36,15 +38,15 @@ public class BootActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
-            startActivity(new Intent(this,PrimaryActivity.class));
+            startActivity(new Intent(this, PrimaryActivity.class));
         }
     }
 
     public void GoToLogin(View view) {
-        startActivity(new Intent(this,LoginActivity.class));
+        startActivity(new Intent(this, LoginActivity.class));
     }
 
     public void GoToRegister(View view) {
-        startActivity(new Intent(this,RegisterActivity.class));
+        startActivity(new Intent(this, RegisterActivity.class));
     }
 }

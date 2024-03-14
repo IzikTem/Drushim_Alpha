@@ -9,6 +9,8 @@ import android.os.Build;
 
 import androidx.core.app.NotificationCompat;
 
+import com.example.drushim_alpha.activities.NotificationActivity;
+
 public class NotificationHelper {
 
 

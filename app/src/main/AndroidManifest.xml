@@ -18,13 +18,13 @@
         android:theme="@style/Theme.Drushim_Alpha"
         tools:targetApi="31">
         <activity
-            android:name=".UserDataActivity"
+            android:name=".activities.UserDataActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".activities.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".BootActivity"
+            android:name=".activities.BootActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,16 +33,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UserActivity"
+            android:name=".activities.UserActivity"
             android:exported="false" />
         <activity
-            android:name=".NotificationActivity"
+            android:name=".activities.NotificationActivity"
             android:exported="false" />
         <activity
-            android:name=".PrimaryActivity"
+            android:name=".activities.PrimaryActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.LoginActivity"
             android:exported="false">
 
             <!-- <intent-filter> -->

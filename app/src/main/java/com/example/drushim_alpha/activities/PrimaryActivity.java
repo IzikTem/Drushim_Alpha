@@ -1,6 +1,5 @@
-package com.example.drushim_alpha;
+package com.example.drushim_alpha.activities;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.BroadcastReceiver;
@@ -9,16 +8,12 @@ import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.drushim_alpha.InternetReciver;
+import com.example.drushim_alpha.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class PrimaryActivity extends AppCompatActivity {
 
@@ -95,16 +90,17 @@ public class PrimaryActivity extends AppCompatActivity {
             int itemName = item.getItemId();
             if (itemName == R.id.primary)
             {
-                startActivity(new Intent(this,PrimaryActivity.class));
+//                startActivity(new Intent(this,PrimaryActivity.class));
+                Toast.makeText(this, "Current Screen", Toast.LENGTH_LONG).show();
             }
             if (itemName == R.id.user)
             {
-//                Toast.makeText(this, "Not Available", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(this,UserActivity.class));
+
+                startActivity(new Intent(this, UserActivity.class));
             }
             if (itemName == R.id.notification)
             {
-                startActivity(new Intent(this,NotificationActivity.class));
+                startActivity(new Intent(this, NotificationActivity.class));
             }
 
             return super.onOptionsItemSelected(item);

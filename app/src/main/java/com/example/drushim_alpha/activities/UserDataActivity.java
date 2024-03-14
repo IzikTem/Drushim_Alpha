@@ -1,16 +1,19 @@
-package com.example.drushim_alpha;
+package com.example.drushim_alpha.activities;
 
 import static com.example.drushim_alpha.FBref.refUsers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.drushim_alpha.R;
+import com.example.drushim_alpha.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -21,10 +24,10 @@ public class UserDataActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
 
-    private EditText etUserDataActivityDate = findViewById(R.id.etUserDataDate);
-    private EditText etUserDataActivityName = findViewById(R.id.etUserDataName);
-    private EditText etUserDataActivityPhone = findViewById(R.id.etUserDataPhone);
-    private EditText etUserDataActivityExperience = findViewById(R.id.etUserDataExp);
+    private EditText etUserDataActivityDate;
+    private EditText etUserDataActivityName;
+    private EditText etUserDataActivityPhone;
+    private EditText etUserDataActivityExperience;
 
 
     private DatePickerDialog picker;
@@ -36,6 +39,10 @@ public class UserDataActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         etUserDataActivityDate = findViewById(R.id.etUserDataDate);
+        etUserDataActivityName = findViewById(R.id.etUserDataName);
+        etUserDataActivityPhone = findViewById(R.id.etUserDataPhone);
+        etUserDataActivityExperience = findViewById(R.id.etUserDataExp);
+
     }
 
     public void click(View view)
@@ -61,13 +68,15 @@ public class UserDataActivity extends AppCompatActivity {
 
 
             FirebaseUser currentUser = mAuth.getCurrentUser();
-            String date = etUserDataActivityDate.toString();
-            String name = etUserDataActivityName.toString();
-            String experience = etUserDataActivityExperience.toString();
-            String phone = etUserDataActivityPhone.toString();
+            String date = etUserDataActivityDate.getText().toString();
+            String name = etUserDataActivityName.getText().toString();
+            String experience = etUserDataActivityExperience.getText().toString();
+            String phone = etUserDataActivityPhone.getText().toString();
 
-            User user = new User(currentUser.getUid().toString(), name, currentUser.getEmail().toString(), phone, experience, date);
-            refUsers.child(currentUser.getUid().toString()).setValue(user);
+            User user = new User(currentUser.getUid(), name, currentUser.getEmail(), phone, experience, date);
+            refUsers.child(currentUser.getUid()).setValue(user);
+
+            startActivity(new Intent(UserDataActivity.this , PrimaryActivity.class));
 
         }
 
